@@ -93,10 +93,9 @@
         },
         created() {
             axios.get('/api/user/major').then(res => {
-                this.majorList = res.data.msg
+                this.majorList = res.msg
             });
-        }
-        ,
+        },
         methods: {
             doRegister(isTrue, mes) {
                 if (isTrue)
@@ -114,12 +113,12 @@
                     sex: user.sex,
                     major: user.major
                 }).then(res => {
-                    if (res.data.status == 1) {
+                    if (res.status == 1) {
                         //注册成功
-                        this.$Message.success(res.data.msg)
+                        this.$Message.success(res.msg)
                         this.$router.push("/login")
                     } else
-                        this.$Message.error(res.data.msg);
+                        this.$Message.error(res.msg);
                 })
             }
         }

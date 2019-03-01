@@ -17,7 +17,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="/index.html"><i class="fa fa-home"></i> 首页<span class="sr-only">(current)</span></a>
+                    <li class="active"><a href="/"><i class="fa fa-home"></i> 首页<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="line"></li>
                     <li><a href="#/blogPage"><i class="fa fa-pencil-square-o"></i> 博客浏览</a></li>

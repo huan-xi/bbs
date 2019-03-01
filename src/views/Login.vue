@@ -80,11 +80,14 @@
                     email: this.user.email,
                     password: this.user.password
                 }).then(res => {
-                    if (res.data.status) {
-                        this.$Message.success(res.data.msg)
+                    if (res.status) {
+                        this.$Message.success(res.msg)
+                        axios.get("/api/user").then(res => {
+                            //全局user
+                        });
                         this.$router.push("/home")
                     } else {
-                        this.$Message.error(res.data.msg);
+                        this.$Message.error(res.msg);
                     }
                 });
             }

@@ -19,7 +19,7 @@
             <div class="row">
                 <!--左侧导航-->
                 <div class="col-md-3">
-                    <Menu :theme="light" active-name="1">
+                    <Menu active-name="1" @on-select="menu_click">
                         <MenuGroup title="个人首页">
                             <MenuItem to="/home" name="1">
                                 <i class="fa fa-tachometer icon"></i>
@@ -51,6 +51,13 @@
                         </MenuGroup>
                     </Menu>
                 </div>
+                <Modal
+                        v-model="modal_logout"
+                        title="提示"
+                        :loading="loading"
+                        @on-ok="asyncOK">
+                    <p>是否确定退出？</p>
+                </Modal>
                 <!--右侧内容-->
                 <div class="col-md-9 context">
                     <router-view/>
@@ -64,6 +71,7 @@
 <script>
     import MyHeader from '../components/Header'
     import MyFooter from "../components/Footer"
+    import axios from "../axios"
 
     export default {
         name: 'home',
@@ -72,7 +80,29 @@
             MyHeader
         },
         data() {
-            return {}
+            return {
+                modal_logout: false,
+                loading: true
+            }
+        },
+        methods: {
+            menu_click(name) {
+                if (name == 6)
+                    this.modal_logout = true;
+            },
+            asyncOK() {
+                this.$router.push('/')
+                axios.get('/api/user/logout').then(res => {
+                    if (res.status == 1) {
+                        this.$Message.success("退出成功！")
+                        setTimeout(() => {
+                            this.modal6 = false;
+                        }, 2000);
+                    }else
+                        this.$Message.error("退出失败");
+                })
+
+            }
         }
     }
 </script>
