@@ -8,14 +8,19 @@
         </div>
         <div class="row">
             <div class="col-sm-12">
+                <select v-model="category" class="col-xs-3  form-control category">
+                    <option value="-1">选择分类</option>
+                    <option class="level-1" v-for="item in categoryList" :value="item.category_id">{{item.title}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
                 <mavon-editor v-model="content"/>
             </div>
         </div>
         <div class="row bottom">
-            <select v-model="category" class="col-xs-3  form-control category">
-                <option value="-1">选择分类</option>
-                <option class="level-1" v-for="item in categoryList" :value="item.category_id">{{item.title}}</option>
-            </select>
             <button class="btn btn-blue btn-green">保存草稿</button>
             <button class="btn btn-blue" @click="public">提交发布</button>
         </div>
@@ -23,19 +28,20 @@
 </template>
 <style scoped>
     .category {
-        margin-left: 15px;
-        width: 25%;
-        margin-bottom: 5px;
+        width: 50%;
+        margin-bottom: 25px;
     }
 
     .blog-title {
-        width: 100%;
+        width: 50%;
         margin-top: 20px;
         margin-bottom: 10px;
     }
-
+    .v-note-wrapper{
+        min-height: 450px;
+    }
     .bottom {
-        margin-top: 10px;
+        margin-top: 50px;
     }
 
     .btn-blue {

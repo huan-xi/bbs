@@ -1,14 +1,16 @@
 <template>
     <div>
-        <my-header/>
+        <my-carousel/>
+        <posts/>
     </div>
 </template>
 
 <script>
-    import MyHeader from '../components/Header'
+    import MyCarousel from "../components/MyCarousel"
+    import Posts from "../components/Posts"
     export default {
         name: "index",
-        components: {MyHeader}
+        components: {Posts, MyCarousel}
     }
 </script>
 

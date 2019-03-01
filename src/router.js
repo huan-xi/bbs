@@ -14,51 +14,25 @@ const routers = new Router({
             component: () => import('./views/Index.vue')
         },
         {
-            path: '/about',
-            name: 'about',
-            component: () => import( './views/About.vue')
+            path: '/post',
+            name: 'post',
+            meta: {
+                title: '帖子详情'
+            },
+            component: () => import('./views/Post.vue')
         },
         {
-            path: '/login',
-            name: 'login',
-            component: () => import('./views/Login.vue')
-        },
-        {
-            path: '/register',
-            name: 'register',
-            component: () => import('./views/Register.vue')
-        },
-        {
-            path: '/home',
-            component: () => import('./views/Home.vue'),
-            children: [
-                {
-                    path: '/',
-                    component: () => import('./views/HomeIndex.vue'),
-                },
-                {
-                    path: '/info',
-                    component: () => import('./views/Info.vue'),
-                },
-                {
-                    path: '/blogs',
-                    component: () => import('./views/Blogs.vue'),
-                },
-                {
-                    path: '/public',
-                    component: () => import('./views/Public.vue'),
-                },
-                {
-                    path: '/commons',
-                    component: () => import('./views/Commons.vue'),
-                },
-            ]
+            path: '/public',
+            meta: {
+                title: '发布帖子'
+            },
+            component: () => import('./views/Public.vue'),
         },
     ]
 })
 routers.beforeEach((to, from, next) => {
     if (to.meta.title)
-        document.title = to.meta.title + "-数据库实验论坛";
+        document.title = to.meta.title + "-113A实验室论坛";
     next()
 })
 export default routers

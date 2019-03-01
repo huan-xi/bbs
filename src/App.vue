@@ -1,7 +1,10 @@
 <template>
     <div>
+        <my-header/>
         <router-view/>
+        <my-footer/>
     </div>
+
 </template>
 
 <style>
@@ -25,9 +28,16 @@
         background-image: url("./assets/main_bg.png");
     }
 
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 1080px) {
         body {
-            width: 1200px;
+            width: 1080px;
         }
     }
 </style>
+<script>
+    import MyHeader from './components/Header'
+    import MyFooter from "./components/Footer"
+    export default {
+        components: {MyFooter, MyHeader}
+    }
+</script>

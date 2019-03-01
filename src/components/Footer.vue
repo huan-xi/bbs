@@ -1,6 +1,6 @@
 <template>
     <div class="footer">
-        <i class="fa fa-html5"></i> Copyright © 2018 <span>数据库实验论坛</span>
+        <i class="fa fa-html5"></i> Copyright © 2018 <span>113A实验室论坛</span>
     </div>
 </template>
 
@@ -12,7 +12,7 @@
 
 <style scoped>
     .footer {
-        margin-top: 100px;
+        margin-top: 50px;
         font-size: 12px;
         padding-right: 15px;
         text-align: center;

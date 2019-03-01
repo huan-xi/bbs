@@ -17,25 +17,21 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="/"><i class="fa fa-home"></i> 首页<span class="sr-only">(current)</span></a>
+                    <li class="active"><a href="/"><i class="fa fa-home"></i> 首页<span
+                            class="sr-only">(current)</span></a>
                     </li>
                     <li class="line"></li>
-                    <li><a href="#/blogPage"><i class="fa fa-pencil-square-o"></i> 博客浏览</a></li>
+                    <li><a href="#/blogPage"><i class="fa fa-pencil-square-o"></i> 资料下载</a></li>
                     <li class="line"></li>
-                    <li><a href="#"><i class="fa fa-pie-chart"></i> 团队成员</a></li>
+                    <li><a href="#"><i class="fa fa-pie-chart"></i> 新闻公告</a></li>
                     <li class="line"></li>
                     <li>
-                        <a href="#/about"><i class="fa fa-exclamation-circle"></i> 关于我们</a></li>
-                    <li class="line"></li>
-                    <li class="dropdown">
-                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i
-                                class="fa fa-flask"></i> 更多功能 <span class="fa fa-angle-down"></span> </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#"><i class="fa fa-comment"></i> 留言互动</a></li>
-                            <li><a href="#"><i class="fa fa-exclamation-circle"></i> 联系我们</a></li>
-                        </ul>
+                        <a href="#/about"><i class="fa fa-exclamation-circle"></i> 关于我们</a>
                     </li>
-                    <li class="right-ioc"><a href="/login"><i class="fa fa-user-circle"></i></a></li>
+                    <li class="line"></li>
+                    <li>
+                        <Button class="post" type="success">我要发帖</Button>
+                    </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -49,35 +45,12 @@
         border-left: solid 1px #bad5ba;
     }
 
-    .navbar-nav li:hover .fa-angle-down {
-        -webkit-transform: rotate(180deg);
-        -moz-transform: rotate(180deg);
-        -o-transform: rotate(180deg);
-        transform: rotate(180deg)
+    .navbar {
+        margin-bottom: 3px;
     }
 
-    .navbar-nav > .dropdown:hover > .dropdown-menu {
-        opacity: 1;
-    }
-
-    .navbar-nav .fa-angle-down {
-        -webkit-transition: all .25s;
-        -moz-transition: all .25s;
-        -ms-transition: all .25s;
-        -o-transition: all .25s;
-        transition: all .25s
-    }
-
-    .dropdown .dropdown-menu {
-        display: inline-block;
-        min-width: 0;
-        opacity: 0;
-        z-index: 1000;
-        border-radius: 5px;
-        -webkit-transition: all .8s;
-        -moz-transition: all .8s;
-        -o-transition: all .8s;
-        transition: all .8s;
+    .post {
+        margin: 10px;
     }
 
     @media screen and (max-width: 766px) {
